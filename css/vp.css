@@ -1,0 +1,307 @@
+/* vp.css
+	 css for main page of video poker */
+	 
+html {
+	box-sizing: border-box;
+}
+	
+	*,
+	*:before,
+	*:after {
+	box-sizing: inherit;
+}
+   
+ body		{
+	background-color: #20457c;
+	border-style: inset; 
+	color: #ECDFBD; 
+	margin: auto;
+	max-width: 725px;
+}
+
+#vp-container {
+	flex-direction: column;
+}
+
+.flex {
+	display: flex;
+}
+   
+#header	{
+	border-style: inset;
+	font-style: italic; 
+	font-size: 2em; 
+	text-align: center; 
+	font-weight: bolder;
+	color: yellow; 
+	padding: 1vw 0;
+	margin: 0.5vw;
+}
+
+#credits-pay-container {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+
+#cards-container	{
+	flex-direction: column;
+	background-color:gray;
+	border-style: outset;
+	justify-content: center;
+	align-items: center;
+	padding-top: 1.5vw;
+}
+
+#cards {
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: nowrap;
+	align-items: center;
+}
+
+.hold-container {
+	flex-grow: 1;
+}
+
+.hold {
+	margin: 5px;
+	max-width: 100%;
+	color: yellow;  
+	font-weight:	bold;  
+	background-color: gray;
+	text-align: center; 
+	border-style: none; 
+}
+
+.card-img-container {
+	margin: 5px;
+}
+
+img.card {
+	max-width: 100%;
+}
+
+#msg {
+	color: #800080; 
+	font-weight: bold; 
+	border-style: inset; 
+	min-width: 80%;
+	margin-top: 70px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#over {
+	color: #ECDFBD; 
+	background-color: #20457c;
+	font-size: 1.5em; 
+	font-weight: bold;
+	font-family: sans-serif;
+	margin-top: -90px;
+	width: 50%;
+	text-align: center;
+}
+
+#pay {
+	padding-right: 2vw;
+	cursor: pointer;
+}
+			 
+			 
+#deal-container 	{
+	justify-content: center;
+	align-items: center;
+	padding: 2vw;
+	width: 40%;
+}  
+
+#bet-container {
+	flex-grow: 1;
+	flex-direction: column;
+}
+
+#bet-amt {
+	justify-content: center;
+	padding: 0.5vw 1vw;
+}
+
+#bet-change {
+	justify-content: center;
+	padding-bottom: 1vw;
+}
+
+.bet-btn {
+	margin: 0.5vw;
+}
+
+#bet-label, #credits	{
+	font-weight: bold; 
+	font-size: 1.5em; 
+	text-align: center; 
+	color: #801090;
+	color: #ECDFBD; 
+}
+
+#bet-label, #bet-display {
+	margin: 1vw;
+}
+			 
+#bet, #bank	{
+	border:none; 
+	background-color:white; 
+	text-align:center; 
+	border-style:inset;
+	font-weight:bold; 
+	font-size:1.5em; 
+	color:blue;
+}
+
+#paytables-img {
+	border-style: none;
+}
+
+#draw-btn {
+	display: none;
+}
+		
+#odds-container {
+	justify-content: center;
+	align-items: center;
+}
+
+#calc-odds:disabled {
+	color: grey;
+	cursor: auto;
+	background-color: #efefef;
+}
+
+
+.bet-btn:disabled {
+	color: grey;
+	cursor: auto;
+}
+
+#odds-btn, #odds-results {
+	margin: 0 1vw;
+}
+
+#ev {
+	font-size: 17px;
+	padding: 7px 25px;
+	font-weight: bold;
+	background-color: #333;
+	color: #f0f0f0;
+}
+
+#odds-help {
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+}
+
+#pay.disable {
+	opacity: 0.5;
+	cursor: auto;
+}
+
+footer {
+	text-align: center;
+}
+
+footer a {
+	text-decoration: none;
+	color: white;
+}
+
+
+/*  modal css  */
+#modal-layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.7);
+	z-index: 999;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+
+#msg-modal-container {
+	width: 70%;
+	border: 3px solid blue;
+	background-color: lightblue;
+	color: black;
+	display: flex;
+	flex-direction: column;
+	max-width: 580px;
+}
+
+#msg-modal-container p {
+	padding: 2vw;
+	font-family: sans-serif;
+	font-size: 1.1em;
+}
+
+#msg-modal-btn {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+
+
+/* small devices */
+@media screen and (max-width: 650px) {
+	body {
+		margin: 8px;
+	}
+
+	#header {
+		margin: 0;
+		padding: 0;
+	}
+	#bank {
+		font-size: 1.3em;
+	}
+
+	#cards-container	{
+		padding-top: 3.5vw;
+	}
+
+	.card-img-container {
+		margin-top: 0;
+	}
+
+	img.card {
+		width: 60px;
+	}
+
+	#over {
+		margin-top: -65px;
+		width: 80%;
+	}
+
+	#bet-deal-container {
+		padding-top: 2vw;
+	}
+
+	#bet-amt {
+		padding: 2vw 1vw;
+	}
+
+	#bet-change {
+		padding-bottom: 3.5vw;
+	}
+
+	#calc-odds {
+		padding: 7px 15px;
+	}
+
+	#ev {
+		width: 120px;
+		padding: 7px 5px;
+	}
+}

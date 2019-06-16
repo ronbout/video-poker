@@ -1,0 +1,163 @@
+/* paytable.css
+	 css for paytable page of video poker */
+
+
+#paytable-page {
+	display: none;
+}
+	 
+.paytables-container {
+	display: flex;
+}
+
+.paytable-list {
+	display: flex;
+	flex-direction: column;
+}
+   
+.paytable-item, .paytable-selected {
+	cursor: pointer;
+	align-items: stretch;
+	margin: 0.75vw 0;
+}
+
+.paytable-item:hover {
+	background-color: #5E3448;
+	color: white;
+}
+
+.paytable-selected, .paytable-selected:hover {
+	-moz-box-shadow:inset 3px 4px 0px 0px #899599;
+	-webkit-box-shadow:inset 3px 4px 0px 0px #899599;
+	box-shadow:inset 3px 4px 0px 0px #899599;
+}
+
+
+.paytable-item, .paytable-selected {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #bab1ba));
+	background:-moz-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-webkit-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-o-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:-ms-linear-gradient(top, #ededed 5%, #bab1ba 100%);
+	background:linear-gradient(to bottom, #ededed 5%, #bab1ba 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#bab1ba',GradientType=0);
+	background-color:#ededed;
+	border:3px solid #d6bcd6;
+	display:inline-block;
+	cursor:pointer;
+	color: #20457c;
+	font-family:Arial;
+	font-size: 1em;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #e1e2ed;
+}
+
+.paytable-selected {
+	background-color:#f3f3f3;
+	color: #103270;
+	font-weight: 750;
+}
+
+
+.paytable-item:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #bab1ba), color-stop(1, #ededed));
+	background:-moz-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-webkit-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-o-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:-ms-linear-gradient(top, #bab1ba 5%, #ededed 100%);
+	background:linear-gradient(to bottom, #bab1ba 5%, #ededed 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#bab1ba', endColorstr='#ededed',GradientType=0);
+	background-color:#bab1ba;
+}
+
+table.paytable {
+	color: #ECDFBD; 
+	font-weight:bold; 
+	font-family:arial, verdana, sans-serif;
+	padding: 3vw 2vw;
+	width: 100%;
+	border-spacing: 2px;
+}
+th.hand {
+	width:70%;
+}
+th {
+	text-decoration:underline;
+	padding-bottom: 2vw;
+	text-align: center;
+}
+
+td {
+	padding-bottom: 0.5vw;
+}
+
+.paytable-name {
+	text-align: left;
+	padding-left: 1vw;
+}
+
+.paytable-value {
+	text-align: center;
+}
+
+#paytable-btns {
+	display: flex;
+	justify-content: center;
+}
+
+#pay-submit, #pay-cancel {
+	margin: 2vw 4vw;
+}
+
+
+/* small devices */
+@media screen and (max-device-width: 650px) {
+	.paytables-container {
+		flex-direction: column;
+	}
+	
+	.paytable-item, .paytable-selected {
+		margin: 1px;
+		padding: 2.2vw;
+		-moz-border-radius:8px;
+		-webkit-border-radius:8px;
+		border-radius:8px;
+		font-size: 1.1em;
+	}
+
+	.paytable-selected, .paytable-selected:hover {
+		-moz-box-shadow:inset 6px 8px 0px 0px #899599;
+		-webkit-box-shadow:inset 6px 8px 0px 0px #899599;
+		box-shadow:inset 6px 8px 0px 0px #899599;
+	}
+
+	#pay-submit, #pay-cancel {
+		margin-top: 3vw;
+		padding: 2.2vw;
+		font-size: 1.1em;
+	}
+
+	.paytable {
+			padding-top: 10px;
+			font-size: 1em;
+		}
+	}
+	
+	/* large devices and desktops */
+	@media screen and (min-device-width: 651px) {
+		.paytable-item, .paytable-selected {
+			padding: 1vw;
+			-moz-border-radius:10px;
+			-webkit-border-radius:10px;
+			border-radius:10px;
+		}
+	
+		.paytable-list {
+			flex: 40;
+			padding: 1.5vw;
+		}
+	
+		.paydesc {
+			flex: 60;
+		}
+	}

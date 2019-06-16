@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Video Poker</title>
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
+	<link rel="stylesheet" href="css/btn.css">
+	<link rel="stylesheet" href="css/vp.css">
+	<link rel="stylesheet" href="pay/paytable.css">
+</head>
+
+<body>
+	<div id="vp-container" class="flex">
+		<header id="header">
+			<span id="paytable-title">Jacks or Better</span>
+			<br>Video Poker
+		</header>
+		<main id="game-container">
+			<div id="credits-pay-container" class="flex">
+				<div id="credits">
+					<p>Credits:
+						<input type="text" id="bank" name="bank" readonly="readonly" size="5" value="1000">
+					</p>
+				</div>
+				<div id="pay">
+					<img id="paytables-img" src="graphics/money.png" alt="Change Paytable">
+				</div>
+			</div>
+
+			<div id="cards-container" class="flex">
+				<div id="odds-container" class="flex">
+					<div id="odds-btn">
+						<button id="calc-odds" class="btn-darkgrey" disabled>Calc Odds/EV</button>
+					</div>
+					<div id="odds-results">
+						<input type=text id="ev" value="0.00" size="10" disabled>
+					</div>
+					<div id="odds-help-container">
+						<img src="graphics/help-circle.svg" id="odds-help" alt="odds help">
+					</div>
+				</div>
+				<div id="cards" class="flex">
+					<div class="card-img-container">
+						<div class="hold-container">
+							<div class="hold" id="hold1">&nbsp;</div>
+						</div>
+						<img id="card1" class="card" data-card="1" src="cards/h2.png" alt="2 of Hearts" title="2 of Hearts">
+					</div>
+					<div class="card-img-container">
+						<div class="hold-container">
+							<div class="hold" id="hold2">&nbsp;</div>
+						</div>
+						<img id="card2" class="card" data-card="2" src="cards/h3.png" alt="3 of Hearts" title="3 of Hearts">
+					</div>
+					<div class="card-img-container">
+						<div class="hold-container">
+							<div class="hold" id="hold3">&nbsp;</div>
+						</div>
+						<img id="card3" class="card" data-card="3" src="cards/h4.png" alt="3 of Hearts" title="4 of Hearts">
+					</div>
+					<div class="card-img-container">
+						<div class="hold-container">
+							<div class="hold" id="hold4">&nbsp;</div>
+						</div>
+						<img id="card4" class="card" data-card="4" src="cards/h5.png" alt="4 of Hearts" title="5 of Hearts">
+					</div>
+					<div class="card-img-container">
+						<div class="hold-container">
+							<div class="hold" id="hold5">&nbsp;</div>
+						</div>
+						<img id="card5" class="card" data-card="5" src="cards/h6.png" alt="5 of Hearts" title="6 of Hearts">
+					</div>
+				</div>
+				<div id="over">GAME OVER</div>
+				<div id="msg">Bet +/- to set Bet amount. &nbsp; 'DEAL' to play.</div>
+			</div>
+
+			<div id="bet-deal-container" class="flex">
+				<div id="bet-container" class="flex">
+					<div id="bet-amt" class="flex">
+						<div id="bet-label">BET:</div>
+						<div id="bet-display">
+							<input type="text" name="bet" id="bet" size="4" value="5" readonly="readonly">
+						</div>
+					</div>
+					<div id="bet-change" class="flex">
+						<button id="betplus" class="btn-yellow bet-btn">Bet +5</button>
+						<button id="betminus" class="btn-yellow bet-btn">Bet -5</button>
+					</div>
+				</div>
+				<div id="deal-container" class="flex">
+					<div>
+						<button id="deal-btn" class="btn-yellow btn-large">Deal</button>
+						<button id="draw-btn" class="btn-yellow btn-large">Draw</button>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+	<div id="paytable-page">
+		<div class="paytables-container">
+			<div class="paytable-list">
+				<h3 class="paytable-selected" data-pay="0" id="pay-1">Jacks or Better</h3>
+				<h3 class="paytable-item" data-pay="1" id="pay-2">Bonus Poker</h3>
+				<h3 class="paytable-item" data-pay="2" id="pay-3">Double Bonus Poker</h3>
+				<h3 class="paytable-item" data-pay="3" id="pay-4">Aces Bonus Poker</h3>
+				<h3 class="paytable-item" data-pay="4" id="pay-5">Triple Bonus Poker</h3>
+			</div>
+			<div class="paydesc">
+				<table class="paytable">
+					<thead>
+						<tr>
+							<th class="hand">Hand</th>
+							<th>Pays</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="paytable-name">ROYAL FLUSH</td>
+							<td class="paytable-value">800</td>
+						</tr>
+						<tr>
+							<td class="paytable-name">STRAIGHT FLUSH</td>
+							<td class="paytable-value">50</td>
+						</tr>
+						<tr>
+							<td class="paytable-name">FOUR OF A KIND</td>
+							<td class="paytable-value">25</td>
+						</tr>
+						<tr>
+							<td class="paytable-name">FULL HOUSE</td>
+							<td class="paytable-value">9</td>
+						</tr>
+						<tr>
+							<td class="paytable-name">FLUSH</td>
+							<td class="paytable-value">6</td>
+						</tr>
+						<tr>
+							<td class="paytable-name">STRAIGHT</td>
+							<td class="paytable-value">4</td>
+						</tr>
+						<tr>
+							<td class="paytable-name">THREE OF A KIND</td>
+							<td class="paytable-value">3</td>
+						</tr>
+						<tr>
+							<td class="paytable-name">TWO PAIR</td>
+							<td class="paytable-value">2</td>
+						</tr>
+						<tr>
+							<td class="paytable-name">JACKS OR BETTER</td>
+							<td class="paytable-value">1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div id="paytable-btns">
+			<button id="pay-submit" class="btn btn-submit">Select</button>
+			<button id="pay-cancel" class="btn btn-cancel">Cancel</button>
+		</div>
+	</div>
+	<footer>
+		<p id="footer-sig">written and coded by
+			<a href="http://ronboutilier.com" target="_blank">Ron Boutilier</a>
+		</p>
+	</footer>
+
+	<div id="modal-layer">
+		<div id="msg-modal-container">
+			<div id="msg-modal">
+				<p id="msg-modal-p"></p>
+			</div>
+			<div id="msg-modal-btn">
+				<button id="modal-close" class="btn">Close</button>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="jquery/jquery-2.1.4.min.js"></script>
+	<!-- <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>-->
+	<!-- Latest compiled and minified JavaScript -->
+	<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	 	crossorigin="anonymous">
+	 </script>-->
+	<script src="rlb-lib.js"></script>
+	<script src="constants.js"></script>
+	<script src="Deck.js"></script>
+	<script src="PokerHand.js"></script>
+	<script src="PayTable.js"></script>
+	<script src="paytablelist.js"></script>
+	<script src="vp.js"></script>
+</body>
+
+</html>

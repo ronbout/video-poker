@@ -1,0 +1,47 @@
+/* vp.css
+	 css for main page of video poker */
+	 
+	 html {
+		box-sizing: border-box;
+	}
+	
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
+   
+ body		{
+	 background-color: #20457c;
+	 border-style:inset; 
+	}
+   
+div.header	{ 
+	border-style:inset;
+	font-style:italic; 
+	font-size:2em; 
+	text-align:center; 
+	font-weight:bolder;
+	color: #ECDFBD; 
+}
+
+/* small devices */
+@media screen and (max-device-width: 650px) {
+	body {
+		font-size: 16px;
+	}
+}
+
+/* large screens and desktops */
+@media screen and (min-device-width: 651px) {
+	body {
+		font-size: 16px;
+		max-width: 725px;
+		margin: auto;
+	}
+
+	.header {
+		padding: 1vw 0;
+		margin: 0.5vw;
+	}
+}

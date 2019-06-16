@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Vegas Prep - PayTable Selection</title>
+	<link rel="stylesheet" type="text/css" href="vp.css" />
+	<link rel="stylesheet" type="text/css" href="paytable.css" />
+</head>
+
+<body>
+	<div class="header"><span id="paytable-title">Jacks or Better</span>
+		<br>Video Poker
+	</div>
+	<div class="paytables-container">
+		<div class="paytable-list">
+			<h3 class="paytable-selected" data-pay="0" id="pay-1">Jacks or Better</h3>
+			<h3 class="paytable-item" data-pay="1" id="pay-2">Bonus Poker</h3>
+			<h3 class="paytable-item" data-pay="2" id="pay-3">Double Bonus Poker</h3>
+			<h3 class="paytable-item" data-pay="3" id="pay-4">Aces Bonus Poker</h3>
+			<h3 class="paytable-item" data-pay="4" id="pay-5">Triple Bonus Poker</h3>
+		</div>
+		<div class="paydesc">
+			<table class="paytable" cellpadding="1" cellspacing="2">
+				<thead>
+					<tr>
+						<th class="hand">Hand</th>
+						<th>Pays</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="paytable-name">ROYAL FLUSH</td>
+						<td class="paytable-value">800</td>
+					</tr>
+					<tr>
+						<td class="paytable-name">STRAIGHT FLUSH</td>
+						<td class="paytable-value">50</td>
+					</tr>
+					<tr>
+						<td class="paytable-name">FOUR OF A KIND</td>
+						<td class="paytable-value">25</td>
+					</tr>
+					<tr>
+						<td class="paytable-name">FULL HOUSE</td>
+						<td class="paytable-value">9</td>
+					</tr>
+					<tr>
+						<td class="paytable-name">FLUSH</td>
+						<td class="paytable-value">6</td>
+					</tr>
+					<tr>
+						<td class="paytable-name">STRAIGHT</td>
+						<td class="paytable-value">4</td>
+					</tr>
+					<tr>
+						<td class="paytable-name">THREE OF A KIND</td>
+						<td class="paytable-value">3</td>
+					</tr>
+					<tr>
+						<td class="paytable-name">TWO PAIR</td>
+						<td class="paytable-value">2</td>
+					</tr>
+					<tr>
+						<td class="paytable-name">JACKS OR BETTER</td>
+						<td class="paytable-value">1</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="paytable-btns">
+		<button class="btn btn-submit">Select</button>
+		<button class="btn btn-cancel">Cancel</button>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="PayTable.js"></script>
+	<script src="paytablelist.js"></script>
+	<script src="loadTable.js"></script>
+
+</body>
+
+</html>
