@@ -4,7 +4,7 @@ var PayTable = function () {
 	// array(s) with the following layout:
 	// array [ High Card,
 	//  			 Pair - array [ 2 - Ace ],
-	//				 Three of Kind,
+	//				 Two Pair,
 	//				 Three of Kind,
 	//				 Straight,
 	//				 Flush,

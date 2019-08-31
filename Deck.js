@@ -84,9 +84,9 @@
 		}
 
 		this.shuffle();
-		for (var z = 0; z < DECK_SIZE; z++) {
+		//for (var z = 0; z < DECK_SIZE; z++) {
 			//console.log(_deck[z].cardNbr());
-		}
+		//}
 	}
 
 
