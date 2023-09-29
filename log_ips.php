@@ -4,7 +4,7 @@
 $logname = isset($_GET['logname']) ? $_GET['logname'] : 'ip.dat';
 
 $ip = $_SERVER['REMOTE_ADDR'];
-$log_flg = true;
+$log_flg = false;
 
 /* 
 can either not log the ip (mine, for instance) or exit program (not useful with ajax call)
