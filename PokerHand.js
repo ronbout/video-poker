@@ -223,14 +223,8 @@ var PokerHand = function (hand) {
 					tmp = _sortedHand[0];
 					_sortedHand[0] = _sortedHand[3];
 					_sortedHand[3] = tmp;
-					/* This should be sorted hand comparison as rank did not change and will always be != */
-					// if (ranks[0] != ranks[1]) {
-					// 	tmp = _sortedHand[1];
-					// 	_sortedHand[1] = _sortedHand[4];
-					// 	_sortedHand[4] = tmp;
-					// }
-					// }
-					if (_sortedHand[0] != _sortedHand[1]) {
+					/* This should be ranks 3 and 4 */
+					if (ranks[3] != ranks[4]) {
 						tmp = _sortedHand[1];
 						_sortedHand[1] = _sortedHand[4];
 						_sortedHand[4] = tmp;
