@@ -176,7 +176,7 @@ var game;
 				case FLUSH:
 				case FULL_HOUSE:
 				case STRT_FLUSH:
-				case ROYALFLUSH:
+				case ROYAL_FLUSH:
 					payout = payStructure[handRank[5]] * _curBet;
 					break;
 				case FOUR_KIND:

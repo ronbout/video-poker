@@ -53,7 +53,7 @@ var PokerHand = function (hand) {
 		_handRank[5] = HIGH_CARD; // default hand rank
 		if (strtFlg || flushFlg) {
 			if (strtFlg && flushFlg)
-				if (ranks[4] == 10) _handRank[5] = ROYALFLUSH;
+				if (ranks[4] == 10) _handRank[5] = ROYAL_FLUSH;
 				else _handRank[5] = STRT_FLUSH;
 			else if (strtFlg) _handRank[5] = STRAIGHT;
 			else _handRank[5] = FLUSH;
