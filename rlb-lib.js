@@ -7,14 +7,14 @@
 	 it can also run a callback function so that processing can take
 	 place without the overhead of a huge array
 */
-var rlb = {
+let rlb = {
 	nCk: function (cards, k, listFlg, callbk) {
-
-		listFlg = (listFlg == undefined) ? true : listFlg;
+		listFlg = listFlg == undefined ? true : listFlg;
 		var n = cards.length;
 		var comboArray = new Array();
 		var tmpArray = new Array(k);
 		var cntArray = new Array(k);
+		let cnt = 0;
 
 		for (var i = 0; i < k; i++) {
 			cntArray[i] = i;
@@ -24,6 +24,7 @@ var rlb = {
 		var contFlg = true;
 
 		while (contFlg) {
+			cnt++;
 			if (listFlg) {
 				comboArray.push(tmpArray.slice());
 			}
@@ -31,7 +32,7 @@ var rlb = {
 			if (callbk) {
 				callbk(tmpArray);
 			}
-			
+
 			if (k === 0) {
 				contFlg = false;
 				continue;
@@ -60,7 +61,10 @@ var rlb = {
 				}
 			}
 		}
-		return comboArray;
-	}
-
-}
+		if (listFlg) {
+			return comboArray;
+		} else {
+			return cnt;
+		}
+	},
+};
